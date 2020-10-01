@@ -87,6 +87,7 @@ export const SudokuValueInput: FC<{
           value={value || ""}
           style={{ color: "inherit" }}
           onChange={onChange}
+          type="tel"
           classes={{
             input: "text-center",
           }}
