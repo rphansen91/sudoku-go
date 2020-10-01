@@ -10,25 +10,28 @@ import { SudokuKeyBoardControls } from "./providers/sudoku/keyboard";
 import { SudokuWasmControls } from "./providers/sudoku/wasm";
 import Sudoku from "./components/Controls/Sudoku";
 import Root from "./components/Root";
+import Container from "@material-ui/core/Container";
 
 export default () => {
   return (
     <Root>
       <SudokuGame>
         <Box p={2} display="flex" justifyContent="center">
-          <Card style={{ display: "inline-block" }}>
-            <SudokuHeader />
-            <Divider />
-            <CardContent>
-              <Box border={1} borderRadius={4}>
-                <Sudoku />
-              </Box>
-            </CardContent>
-            <Divider />
-            <NumberControls />
-            <SudokuKeyBoardControls />
-            <SudokuWasmControls />
-          </Card>
+          <Container style={{ maxWidth: 740 }}>
+            <Card style={{ display: "inline-block", width: "100%" }}>
+              <SudokuHeader />
+              <Divider />
+              <CardContent>
+                <Box border={1} borderRadius={4}>
+                  <Sudoku />
+                </Box>
+              </CardContent>
+              <Divider />
+              <NumberControls />
+              <SudokuKeyBoardControls />
+              <SudokuWasmControls />
+            </Card>
+          </Container>
         </Box>
       </SudokuGame>
     </Root>

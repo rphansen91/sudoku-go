@@ -35,10 +35,11 @@ export const SudokuFab: FC<FabProps> = ({ children, ...props }) => {
           : {
               overflow: "hidden",
               borderRadius: 4,
-              height: 20,
-              lineHeight: "20px",
+              height: 24,
+              width: 24,
+              lineHeight: "24px",
               verticalAlign: "middle",
-              width: 20,
+              textAlign: "center",
               minHeight: "initial",
             }
       }
