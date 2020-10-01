@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
@@ -12,10 +14,12 @@
     "@types/react-dom": "^16.9.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-hawk": "^0.0.6-development",
     "react-scripts": "3.4.3",
     "typescript": "~3.7.2"
   },
   "scripts": {
+    "go:build": "GOARCH=wasm GOOS=js go build -o public/lib.wasm src/go/main.go && cp \"$(go env GOROOT)/misc/wasm/wasm_exec.js\" public",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
