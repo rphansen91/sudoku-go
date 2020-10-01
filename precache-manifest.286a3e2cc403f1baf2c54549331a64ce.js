@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "38b6c85f29352eb596c0e7bc9dacd281",
+    "revision": "52b6f74b3bbf83330f1d51cf875198d1",
     "url": "/sudoku-go/index.html"
   },
   {
-    "revision": "04c7bbf6b06287f3904e",
+    "revision": "d7809f97f58e3f299832",
     "url": "/sudoku-go/static/css/main.b36679a0.chunk.css"
   },
   {
-    "revision": "53a76ca5497da14247f7",
-    "url": "/sudoku-go/static/js/2.a61a0d9c.chunk.js"
+    "revision": "72978a922db4a3fd8dc3",
+    "url": "/sudoku-go/static/js/2.c461077c.chunk.js"
   },
   {
     "revision": "89b0379e7bcda1a468d8b0343aeb4e53",
-    "url": "/sudoku-go/static/js/2.a61a0d9c.chunk.js.LICENSE.txt"
+    "url": "/sudoku-go/static/js/2.c461077c.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "04c7bbf6b06287f3904e",
-    "url": "/sudoku-go/static/js/main.5c3fcaa5.chunk.js"
+    "revision": "d7809f97f58e3f299832",
+    "url": "/sudoku-go/static/js/main.9292909c.chunk.js"
   },
   {
     "revision": "a07fe0c3eb6075dc0f38",
