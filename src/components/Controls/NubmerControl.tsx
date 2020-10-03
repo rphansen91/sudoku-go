@@ -23,26 +23,9 @@ export const SudokuNumBorder: FC<IRowCol> = ({ children, row, col }) => {
 };
 
 export const SudokuFab: FC<FabProps> = ({ children, ...props }) => {
-  const large = useMediaQuery("(min-width:727px)");
   return (
     <Fab
-      style={
-        large
-          ? {
-              overflow: "hidden",
-              borderRadius: 4,
-            }
-          : {
-              overflow: "hidden",
-              borderRadius: 4,
-              height: 24,
-              width: 24,
-              lineHeight: "24px",
-              verticalAlign: "middle",
-              textAlign: "center",
-              minHeight: "initial",
-            }
-      }
+      className="sudoku-fab"
       {...props}
     >
       {children}

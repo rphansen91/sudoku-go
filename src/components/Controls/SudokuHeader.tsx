@@ -14,29 +14,28 @@ import Pause from "@material-ui/icons/Pause";
 import React, { useState } from "react";
 import { useSudokuGame } from "../../providers/sudoku/context";
 import {
+  useSudokuWasmCreate,
   useSudokuWasmSolve,
   useSudokuWasmVisualize,
 } from "../../providers/sudoku/wasm";
 
 export const SudokuHeader = () => {
-  const { refresh } = useSudokuGame();
+//   const { refresh } = useSudokuGame();
   const [confirmRefresh, setConfirmRefresh] = useState(false);
+  const createBoard = useSudokuWasmCreate();
   const solveBoard = useSudokuWasmSolve();
-  const { onVisualize, playing, paused, onPause, onStop } = useSudokuWasmVisualize();
+  const { onVisualize, playing, onPause, onStop } = useSudokuWasmVisualize();
   const onRefresh = () => {
     onPause()
     setConfirmRefresh(true)
   };
   const onConfirmRefresh = () => {
     onStop();
-    refresh();
+    createBoard(40);
     setConfirmRefresh(false);
   }
   const onCancelRefresh = () => {
     setConfirmRefresh(false)
-    if (paused) {
-        onVisualize()
-    }
   }
   const onSolve = () => {
     onStop();

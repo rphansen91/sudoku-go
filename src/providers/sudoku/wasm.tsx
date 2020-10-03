@@ -8,7 +8,7 @@ export const SudokuWasmControls = () => {
 
   useEffect(() => {
     async function create() {
-      const board = await createBoard();
+      const board = await createBoard(40);
       setInitialBoard(board);
     }
 
@@ -16,6 +16,18 @@ export const SudokuWasmControls = () => {
   }, []);
 
   return null;
+};
+
+export const useSudokuWasmCreate = () => {
+  const { setBoard, setInitialBoard } = useSudokuGame();
+
+  const onCreate = useCallback(async (difficulty: number) => {
+    const board = await createBoard(difficulty);
+    setInitialBoard(board);
+    setBoard(board);
+  }, []);
+
+  return onCreate;
 };
 
 export const useSudokuWasmSolve = () => {
@@ -100,22 +112,24 @@ async function init() {
   }
 }
 
-async function createBoard() {
+async function createBoard(dificulty: number) {
   if (!(window as any).createBoard) await init();
-  const boardStr = (window as any).createBoard();
+  const boardStr = (window as any).createBoard(dificulty);
   const board = JSON.parse(boardStr);
   return board;
 }
 
 async function solveBoard() {
-  await createBoard();
+    if (!(window as any).solveBoard) await init();
+//   await createBoard();
   const boardStr = (window as any).solveBoard();
   const board = JSON.parse(boardStr);
   return board;
 }
 
 async function visualizeBoard(fn: (board: IBoard) => void) {
-  await createBoard();
+    if (!(window as any).visualizeBoard) await init();
+//   await createBoard();
   const boardStr = (window as any).visualizeBoard((str: string) => {
     fn(JSON.parse(str));
   });

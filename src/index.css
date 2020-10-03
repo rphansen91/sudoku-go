@@ -21,3 +21,27 @@ code {
 .text-center {
   text-align: center;
 }
+
+.sudoku-fab {
+  overflow: hidden;
+  border-radius: 4px!important;
+  vertical-align: middle;
+  text-align: center;
+  min-height: initial!important;
+}
+
+@media (max-width: 727px) {
+  .sudoku-fab {
+    height: 34px!important;
+    width: 34px!important;
+    line-height: 34px!important;
+  }
+}
+
+@media (max-width: 500px) {
+  .sudoku-fab {
+    height: 24px!important;
+    width: 24px!important;
+    line-height: 24px!important;
+  }
+}

@@ -18,7 +18,7 @@ export default () => {
       <SudokuGame>
         <Box p={2} display="flex" justifyContent="center">
           <Container style={{ maxWidth: 740 }}>
-            <Card style={{ display: "inline-block", width: "100%" }}>
+            <Card style={{ width: "100%" }}>
               <SudokuHeader />
               <Divider />
               <CardContent>
