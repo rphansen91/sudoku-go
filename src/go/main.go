@@ -3,7 +3,7 @@ package main
 import (
 	"syscall/js"
 
-	"github.com/rphansen91/learn/sudoku"
+	"github.com/rphansen91/sudoku"
 )
 
 // Declare a main function, this is the entrypoint into our go module
