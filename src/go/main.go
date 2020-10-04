@@ -66,11 +66,10 @@ func updateBoardWrapper() js.Func {
 
 func solveWrapper() js.Func {
 	return js.FuncOf(func(this js.Value, args []js.Value) interface{} {
-		board = board.Copy()
 		var solutions []sudoku.Board
 		// callback := args[len(args)-1:][0]
 		sudoku.Solve(board, &solutions, func(r, c, v int) {
-			// callback.Invoke(board.Display())
+			// callback.Invoke(board.Copy().Display())
 		})
 		return solutions[0].Display()
 	})
@@ -79,9 +78,15 @@ func solveWrapper() js.Func {
 func visualizeWrapper() js.Func {
 	return js.FuncOf(func(this js.Value, args []js.Value) interface{} {
 		callback := args[len(args)-1:][0]
-		board = board.Copy()
 		var solutions []sudoku.Board
+		var completed bool = false
 		sudoku.Solve(board, &solutions, func(r, c, v int) {
+			if completed {
+				return
+			}
+			if board.Check() {
+				completed = true
+			}
 			callback.Invoke(board.Display())
 		})
 		return solutions[0].Display()
